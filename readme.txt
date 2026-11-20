@@ -9,7 +9,7 @@ https://api.demoblaze.com/signup y https://api.demoblaze.com/login.
 
 - JDK 25 instalado y disponible en JAVA_HOME y PATH. La ejecucion registrada
   en este proyecto se realizo con Java 25.
-- Git y acceso a Internet para clonar el repositorio, descargar Gradle y las
+- Git  para clonar el repositorio, descargar Gradle y las
   dependencias de Maven Central y acceder a la API publica.
 - Opcional: Postman para probar manualmente los comandos cURL incluidos.
 
