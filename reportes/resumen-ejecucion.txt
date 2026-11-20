@@ -1,0 +1,25 @@
+REPORTE RESUMIDO DE EJECUCION
+
+Fecha de inicio: 2026-11-20 00:54:33 UTC (2026-11-19 19:54:33 UTC-5).
+Ejecutor: Gradle/JUnit y Karate 1.5.2.
+Sistema: Windows; Java 25.
+Servicio: https://api.demoblaze.com
+Resultado: 4 escenarios, 4 aprobados, 0 fallidos, 0 omitidos.
+
+Escenarios:
+1. Create a new signup user: aprobado.
+   Entrada: username unico y password de prueba.
+   Salida validada: HTTP 200 y cuerpo "".
+2. Signup rejects an existing user: aprobado.
+   Entrada: username y password previamente registrados en el escenario.
+   Salida validada: HTTP 200 y errorMessage "This user already exist.".
+3. Login with a valid user and password: aprobado.
+   Entrada: username y password previamente registrados en el escenario.
+   Salida validada: HTTP 200 y texto que contiene "Auth_token: ".
+4. Login rejects incorrect credentials: aprobado.
+   Entrada: username inexistente y password de prueba.
+   Salida validada: HTTP 200 y errorMessage "User does not exist.".
+
+Este resumen se basa en los resultados de la ejecucion local; los usuarios
+generados y el token no se publican aqui. Para generar reportes detallados y
+actualizados, ejecutar las instrucciones de readme.txt.

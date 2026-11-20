@@ -1,0 +1,27 @@
+CONCLUSIONES - PRUEBAS DE API DEMOBLAZE
+
+Se automatizaron cuatro escenarios con Karate: registro de un usuario nuevo,
+registro duplicado, login con credenciales correctas y login con un usuario
+inexistente. En la ejecucion resumida en reportes/resumen-ejecucion.txt, los
+cuatro escenarios aprobaron.
+
+Hallazgos observados en esa ejecucion:
+
+- Signup exitoso respondio HTTP 200 con el cuerpo "".
+- Un registro duplicado respondio HTTP 200 con
+  {"errorMessage":"This user already exist."}.
+- El login correcto respondio HTTP 200 con un texto que contiene Auth_token.
+- El login con un usuario inexistente respondio HTTP 200 con
+  {"errorMessage":"User does not exist."}.
+
+Por tanto, el codigo HTTP por si solo no diferencia estos errores de aplicacion
+de los casos exitosos; es necesario comprobar tambien el cuerpo de respuesta.
+
+Se generan usuarios aleatorios para que las pruebas no dependan de un usuario
+fijo. Sin embargo, las pruebas dependen de la API publica, crean registros
+reales que pueden permanecer en el servicio y pueden fallar si cambian la
+disponibilidad o el comportamiento del servidor.
+
+El caso de credenciales incorrectas comprueba especificamente un usuario
+inexistente. No demuestra el comportamiento de una contrasena incorrecta para
+un usuario existente ni cubre otros casos de seguridad o validacion.
